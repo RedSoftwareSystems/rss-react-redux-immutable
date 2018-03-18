@@ -1,7 +1,13 @@
-.route-wrapper {
+.fade-container {
     position: relative;
 }
 
-.route-wrapper > div {
+.fade {
+    position: relative;
+    background: yellow;
+}
+
+.fade-container > div {
     position: absolute;
+    width: 100%;
 }

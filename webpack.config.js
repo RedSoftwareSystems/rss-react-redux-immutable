@@ -103,7 +103,7 @@ const webpackConfig = {
                     'style-loader',
                     MiniCssExtractPlugin.loader,
                     {loader: 'css-loader', options: {importLoaders: 1}},
-                    'postcss-loader'
+                    // 'postcss-loader'
                 ],
                 exclude: /node_modules/
             },
