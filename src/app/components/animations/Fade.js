@@ -58,7 +58,7 @@ export class Fade extends React.Component {
             atActive = transition.atActive,
             atLeave = transition.atLeave
         } = this.props;
-        return (<Motion
+        return (this.state.mountMotion && <Motion
             defaultStyle={atEnter}
             style={active?atActive:atLeave}
             onRest={() => {
@@ -66,7 +66,7 @@ export class Fade extends React.Component {
             }}
         >
             {interpolatingStyle => <div style={{top: 0, position: active?'relative':'absolute', ...style, ...interpolatingStyle}}
-                                        className={className}>{this.state.mountMotion?children:null}</div>}
+                                        className={className}>{children}</div>}
         </Motion>);
     }
 }
