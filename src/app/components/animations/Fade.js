@@ -6,6 +6,7 @@ export const transition = {
     // start in a transparent, upscaled state
     atEnter: {
         opacity: 0,
+        top: 0,
         // scale: 1.2,
     },
     // leave in a transparent, downscaled state
@@ -21,7 +22,7 @@ export const transition = {
 };
 
 export class Fade extends React.Component {
-    propTypes = {
+    static propTypes = {
         children: PropTypes.oneOfType(
             [
                 PropTypes.node,
@@ -65,7 +66,7 @@ export class Fade extends React.Component {
                 !active && this.setState({mountMotion:false})
             }}
         >
-            {interpolatingStyle => <div style={{top: 0, position: active?'relative':'absolute', ...style, ...interpolatingStyle}}
+            {interpolatingStyle => <div style={{position: active?'relative':'absolute', ...style, ...interpolatingStyle}}
                                         className={className}>{children}</div>}
         </Motion>);
     }

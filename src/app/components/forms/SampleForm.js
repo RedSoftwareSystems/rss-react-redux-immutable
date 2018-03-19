@@ -8,7 +8,7 @@ import Fade from 'app/components/animations/Fade';
 import {cancel, edit, save, fieldModify} from 'app/state/actions/sampledata.actions';
 
 const _SDataForm = ({formData, onFieldChange}) => (
-    <section>
+    !!formData?<section>
         <fieldset>
             <label>First name (ma daiii): <input type={'text'} name={'firstName'}
                                                  value={formData.get('firstName')}
@@ -23,7 +23,7 @@ const _SDataForm = ({formData, onFieldChange}) => (
                                      onChange={onFieldChange}/>
             </label>
         </fieldset>
-    </section>
+    </section>:null
 );
 
 const _SDataView = ({viewData}) => (
@@ -39,7 +39,7 @@ const _SampleForm = ({
                          onFieldChange,
                          sampleData
                      }) => {
-    const formData = sampleData.get('__copy', Immutable.Map()),
+    const formData = sampleData.get('__copy'),
         viewData = sampleData.get('content', Immutable.Map()),
         editMode = !!sampleData.get('__copy');
     return (
