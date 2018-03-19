@@ -7,17 +7,14 @@ export const transition = {
     atEnter: {
         opacity: 0,
         top: 0,
-        // scale: 1.2,
     },
     // leave in a transparent, downscaled state
     atLeave: {
         opacity: spring(0),
-        // scale: spring(0.8),
     },
     // and rest at an opaque, normally-scaled state
     atActive: {
         opacity: spring(1),
-        // scale: spring(1),
     },
 };
 
